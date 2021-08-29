@@ -3,5 +3,5 @@ const url = 'http://api.weatherstack.com/current?access_key=242f91bf2389cb209821
 
 request({ url: url, json: true }, (error, response) => {
     // console.log(response.body.current);
-    console.log('The current temperature is ' + response.body.current.temperature + ', But it feels like ' + response.body.current.feelslike)
+    console.log(response.body.current.weather_descriptions + '. The current temperature is ' + response.body.current.temperature + ', But it feels like ' + response.body.current.feelslike)
 });
