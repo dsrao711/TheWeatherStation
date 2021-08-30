@@ -1,10 +1,11 @@
 const request = require('request');
-
-//weather stack api
+const geocode = require('./utils/geocode')
+    // weather stack api
 const url = 'http://api.weatherstack.com/current?access_key=242f91bf2389cb2098212e5f800f7c2e&query=19.0760,72.8777'
 
+
 request({ url: url, json: true }, (error, response) => {
-    // console.log(response.body.current);
+
     if (error) {
         console.log('Unable to connect to weather service')
     } else if (response.body.error) {
@@ -16,43 +17,9 @@ request({ url: url, json: true }, (error, response) => {
 });
 
 
-// Geocoding 
-// MapBox
-
-// const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiZGl2eWFyYW8iLCJhIjoiY2tzeGZrdjI5MHBhdjJ1cndzM2gyaDUxZyJ9.1kMmODinWPMJdb_kdaMeAw'
-
-// request({ url: geocodeURL, json: true }, (error, response) => {
-//     if (error) {
-//         console.log('Unable to connect to weather service')
-//     } else if (response.body.error) {
-//         console.log('Unable to find location')
-//     } else {
-//         console.log('latitude :' + response.body.features[0].center[1])
-//         console.log('longitude :' + response.body.features[0].center[0])
-//     }
-
-// })
-
-// encodeURIComponent - used if there are any special charachters  in the string , (? becomes &3F)
-const geocode = (address, callback) => {
-    const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1IjoiZGl2eWFyYW8iLCJhIjoiY2tzeGZrdjI5MHBhdjJ1cndzM2gyaDUxZyJ9.1kMmODinWPMJdb_kdaMeAw'
-    request({ url: geocodeURL, json: true }, (error, response) => {
-        if (error) {
-            callback('Unable to connect to location services', undefined)
-        } else if (response.body.features.length == 0) {
-            callback('Unable to find location . Please try again', undefined)
-        } else {
-            callback(undefined, {
-                latitude: response.body.features[0].center[0],
-                longitude: response.body.features[0].center[1],
-                location: response.body.features[0].place_name
-            })
-        }
-    })
-}
-
-
-geocode('chennai', (error, data) => {
-    console.log('Error : ', error)
+geocode('Boston', (error, data) => {
+    if (error) {
+        console.log(error)
+    }
     console.log('Data : ', data)
 })
