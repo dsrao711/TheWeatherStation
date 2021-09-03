@@ -5,10 +5,14 @@ const app = express()
 publicDirPath = path.join(__dirname, '../public')
 app.use(express.static(path.join(__dirname, './public')))
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'hbs');
+
 
 app.get('', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        title: 'TheWeatherBooth',
+        city: "Mumbai"
+    })
 })
 
 
