@@ -1,21 +1,21 @@
-const geocode = require('./utils/geocode')
-const forecast = require('./utils/forecast')
+const express = require('express')
+const path = require('path')
+const app = express()
 
-const address = process.argv[2]
+publicDirPath = path.join(__dirname, '../public')
+app.use(express.static(path.join(__dirname, './public')))
 
-if (!address) {
-    console.log('Please provide an address')
-} else {
-    geocode(address, (error, data) => {
-        if (error) {
-            console.log(error)
-        }
-        forecast(data.latitude, data.longitude, (error, forecastData) => {
-            if (error) {
-                console.log('Error', error)
-            }
-            console.log(data.location)
-            console.log('Data', forecastData)
-        })
-    })
-}
+app.set('view engine', 'ejs')
+
+app.get('', (req, res) => {
+    res.render('index')
+})
+
+
+app.get('/weather', (req, res) => {
+    res.send('Weather data')
+})
+
+app.listen(3000, () => {
+    console.log('Listening to port 3000')
+})
