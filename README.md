@@ -1,2 +1,7 @@
 # TheWeatherBooth
-Weather forecast project
+Tech stack
+
+- Node.js
+- Express.js
+- EJS
+- Mongo DB
