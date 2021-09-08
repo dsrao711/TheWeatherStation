@@ -9,7 +9,6 @@ viewsDirPath = path.join(__dirname, '../templates/views')
 partialsDirPath = path.join(__dirname, '../templates/partials')
 app.use(express.static(path.join(__dirname, './public')))
 
-
 app.set('view engine', 'hbs');
 app.set('views', viewsDirPath)
 hbs.registerPartials(partialsDirPath)
