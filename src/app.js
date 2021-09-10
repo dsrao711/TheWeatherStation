@@ -3,17 +3,14 @@ const path = require('path')
 const app = express()
 const hbs = require('hbs')
 
-
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
-
-
 
 publicDirPath = path.join(__dirname, '../public')
 viewsDirPath = path.join(__dirname, '../templates/views')
 partialsDirPath = path.join(__dirname, '../templates/partials')
-app.use(express.static(path.join(__dirname, './public')))
 
+app.use(express.static(path.join(__dirname, './public')))
 app.set('view engine', 'hbs');
 app.set('views', viewsDirPath)
 hbs.registerPartials(partialsDirPath)
@@ -83,28 +80,3 @@ app.get('*', (req, res) => {
 app.listen(3000, () => {
     console.log('Listening to port 3000')
 })
-
-
-
-
-// const geocode = require('./utils/geocode')
-// const forecast = require('./utils/forecast')
-
-// const address = process.argv[2]
-
-// if (!address) {
-//     console.log('Please provide an address')
-// } else {
-//     geocode(address, (error, data) => {
-//         if (error) {
-//             console.log(error)
-//         }
-//         forecast(data.latitude, data.longitude, (error, forecastData) => {
-//             if (error) {
-//                 console.log('Error', error)
-//             }
-//             console.log(data.location)
-//             console.log('Data', forecastData)
-//         })
-//     })
-// }
