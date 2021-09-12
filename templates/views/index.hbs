@@ -9,21 +9,36 @@
     <link rel="stylesheet" href="../../public/css/styles.css">
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Weather station</h1>
+    <form>
+        <input>
+        <button>Search</button>
+    </form>
 </body>
 <script>
+
     console.log("Client side js")
 
-    fetch('http://localhost:3000/weather?address=karkala').then((response) =>{
+    
+    const weatherForm = document.querySelector('form')
+    const search = document.querySelector('input')
+
+    weatherForm.addEventListener('submit' , (e) => {
+        e.preventDefault()
+        const location = search.value
+        fetch('http://localhost:3000/weather?address=' + location).then((response) =>{
         response.json().then((data) =>{
             if(data.error){
                 console.log("data.error")
             }else{
                 console.log(data.location)
-                console.log(data.forecast.description)
+                console.log(data.forecast)
             }
         })
     })
+ 
+    })
+
 
 </script>
 </html>
