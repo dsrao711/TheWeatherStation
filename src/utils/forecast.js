@@ -6,6 +6,7 @@ const forecast = (latitude, longitude, callback) => {
 
 
     // Using object destructuring 
+
     request({ url: url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to weather servies ', undefined)
@@ -16,7 +17,12 @@ const forecast = (latitude, longitude, callback) => {
                 temperature: body.current.temperature,
                 description: body.current.weather_descriptions[0],
                 feels_like: body.current.feelslike,
-                humidity: body.current.humidity
+                humidity: body.current.humidity,
+                wind_speed: body.current.wind_speed,
+                pressure: body.current.pressure,
+                uv_index: body.current.uv_index,
+
+
             })
         }
     })

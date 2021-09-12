@@ -1,49 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cyborg/bootstrap.min.css" integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../public/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Weather station</h1>
-    <form>
-        <input>
-        <button>Search</button>
-    </form>
 
-    <p id = "messageOne"></p>
-    <p id = "messageTwo"></p>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <div class="row">
+            <div class="col-lg-4" style = "background-color: #f4cfdf; height : 100vh" >
+
+            </div>
+            <div class="col-lg-8">
+                <div class="row mt-3 p-3">
+                    <form class="card card-sm" style= "opacity: 1">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <i class="fas fa-search h4 text-body"></i>
+                            </div>
+                            <!--end of col-->
+                            <div class="col">
+                                <input class="form-control form-control-lg form-control-borderless" type="search"
+                                    placeholder="Enter Location!">
+                            </div>
+                            <!--end of col-->
+                            <div class="col-auto">
+                                <button class="btn btn-lg" type="submit" style="background-color: #f7f6cf;">Search</button>
+                            </div>
+                           
+                            <!--end of col-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-4 m-0">
+                {{!-- <h1>Weather display</h1>
+                <form>
+                    <input>
+                    <button>Search</button>
+                </form> --}}
+
+
+            </div>
+            <div class="col-lg-8">
+                {{!-- <h5>Weather desc</h5> --}}
+                
+            </div>
+        </div>
+    </div>
+
 </body>
-<script>
+<script src="/js/index.js">
 
-    const weatherForm = document.querySelector('form')
-    const search = document.querySelector('input')
-    const messageOne = document.querySelector('#messageOne')
-    const messageTwo = document.querySelector('#messageTwo')
-    messageOne.textContent = 'Loading ...'
-    messageTwo.textContent = ''
-
-    weatherForm.addEventListener('submit' , (e) => {
-        e.preventDefault()
-        const location = search.value
-        fetch('http://localhost:3000/weather?address=' + location).then((response) =>{
-        response.json().then((data) =>{
-            if(data.error){
-                messageOne.textContent = data.error
-            }else{
-                messageOne.textContent = data.location
-                messageTwo.textContent = data.forecast.description
-            }
-        })
-    })
- 
-    }) 
 
 
 </script>
-</html>
 
+</html>
