@@ -7,6 +7,9 @@
 body {
     overflow-x: hidden;
     font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .context {
@@ -153,13 +156,14 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #131313;
-}
+} */
 
 .container {
     position: relative;
@@ -275,7 +279,7 @@ body {
 .container .card .contentBx .size h3,
 .container .card .contentBx .color h3 {
     color: #5784ba;
-    font-weight: 300;
+    font-weight: 700;
     font-size: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;

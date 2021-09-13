@@ -5,7 +5,9 @@ const search = document.querySelector('input')
 const messageOne = document.querySelector('#messageOne')
 const messageTwo = document.querySelector('#messageTwo')
 messageOne.textContent = 'Loading ...'
-messageTwo.textContent = ''
+messageTwo.textContent = 'Loading ...'
+messageThree.textContent = 'Loading ...'
+messageFour.textContent = 'Loading ...'
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -15,8 +17,10 @@ weatherForm.addEventListener('submit', (e) => {
             if (data.error) {
                 messageOne.textContent = data.error
             } else {
-                messageOne.textContent = data.location
-                messageTwo.textContent = data.forecast.description
+                messageOne.textContent = data.forecast.uv_index
+                messageTwo.textContent = data.forecast.humidity
+                messageThree.textContent = data.forecast.pressure
+                messageFour.textContent = data.forecast.wind_speed
             }
         })
     })

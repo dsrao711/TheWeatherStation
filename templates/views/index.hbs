@@ -14,7 +14,7 @@
 <body>
 
     <div class="area">
-
+        {{!-- Animation --}}
         <ul class="circles">
             <li></li>
             <li></li>
@@ -30,15 +30,15 @@
 
         <div class="row">
             {{!-- Design --}}
-            <div class="col-lg-4" style="background-color: #84a6d6; height : 100vh">
+            <div class="col-lg-4 col-sm-12 col-sm-12" style="background-color: #84a6d6; height : 100vh ;">
 
             </div>
 
             {{!-- Weather desc --}}
-            <div class="col-lg-8 col-md-12">
+            <div class="col-lg-8 col-md-12 col-sm-12 p-2" style="height : 100vh ;">
 
                 {{!-- Search bar starts--}}
-                <div class="row mt-3 p-3">
+                <div class="row m-3 p-2">
                     <form class="card card-sm" style="opacity: 1">
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
@@ -61,19 +61,19 @@
                 {{!-- Search-bar-ends --}}
 
                 {{!-- Container-1-starts --}}
-                <div class="container">
+                <div class="container m-2">
 
                     {{!-- Row-1-begins --}}
-                    <div class="row align-items-center">
-                        
+                    <div class="row align-items-center ">
+
                         {{!-- Card01 - Begins --}}
-                        <div class="col-lg-6 col-md-12 col-sm-12" style="column-gap: 20;">
+                        <div class="col-lg-6 col-md-12 col-sm-12 p-2" style="column-gap: 20;">
                             <div class="container">
                                 <div class="card">
                                     <div class="contentBx">
                                         <h2>UV Index</h2>
                                         <div class="size">
-                                            <h3>1.4</h3>
+                                            <h3 id = "messageOne">1.4</h3>
                                         </div>
                                         <div class="color">
                                             <p>Description </p>
@@ -85,13 +85,13 @@
                         {{!-- Card-1ends --}}
 
                         {{!-- Card-2-begins --}}
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12 p-2">
                             <div class="container">
                                 <div class="card">
                                     <div class="contentBx">
-                                        <h2>UV Index</h2>
+                                        <h2>Humidity</h2>
                                         <div class="size">
-                                            <h3>1.4</h3>
+                                            <h3 id = "messageTwo">1.4</h3>
                                         </div>
                                         <div class="color">
                                             <p>Description </p>
@@ -104,17 +104,17 @@
 
                     </div>
                     {{!-- Row-1-ends --}}
-
                     {{!-- Row-2-begins --}}
-                    <div class="row align-items-center">
+                    <div class="row align-items-center p-2">
+
                         {{!-- Card01 - Begins --}}
-                        <div class="col-lg-6 col-md-12 col-sm-12" style="column-gap: 20;">
+                        <div class="col-lg-6 col-md-12 col-sm-12 p-2" style="column-gap: 20;">
                             <div class="container">
                                 <div class="card">
                                     <div class="contentBx">
-                                        <h2>UV Index</h2>
+                                        <h2>Pressure</h2>
                                         <div class="size">
-                                            <h3>1.4</h3>
+                                            <h3 id = "messageThree">1.4</h3>
                                         </div>
                                         <div class="color">
                                             <p>Description </p>
@@ -126,13 +126,13 @@
                         {{!-- Card-1ends --}}
 
                         {{!-- Card-2-begins --}}
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12 p-2">
                             <div class="container">
                                 <div class="card">
                                     <div class="contentBx">
-                                        <h2>UV Index</h2>
+                                        <h2>Wind speed</h2>
                                         <div class="size">
-                                            <h3>1.4</h3>
+                                            <h3 id = "messageFour">1.4</h3>
                                         </div>
                                         <div class="color">
                                             <p>Description </p>
@@ -142,13 +142,14 @@
                             </div>
                         </div>
                         {{!-- Card-2-ends --}}
-                    </div>
-                    {{!-- Row-2-ends --}}
 
+                    </div>
+                    {{!-- Row-1-ends --}}
                 </div>
                 {{!-- Container-1-ends --}}
 
-                {{!-- Animations ends --}}
+                
+{{!-- Animations ends --}}
 </body>
 <script src="/js/index.js">
 
