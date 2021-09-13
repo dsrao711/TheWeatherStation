@@ -29,6 +29,7 @@ body {
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
     width: 100%;
     height: 100vh;
+    opacity: 0.8;
 }
 
 .circles {
@@ -45,31 +46,31 @@ body {
     display: block;
     list-style: none;
     width: 20px;
-    height: 20px;
+    height: 40px;
     background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
+    animation: animate 20s linear infinite;
     bottom: -150px;
 }
 
 .circles li:nth-child(1) {
     left: 25%;
     width: 80px;
-    height: 80px;
+    height: 100px;
     animation-delay: 0s;
 }
 
 .circles li:nth-child(2) {
     left: 10%;
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 80px;
     animation-delay: 1s;
     animation-duration: 12s;
 }
 
 .circles li:nth-child(3) {
     left: 70%;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 70px;
     animation-delay: 4s;
 }
 
@@ -173,7 +174,7 @@ body {
     position: relative;
     width: 370px;
     height: 200px;
-    background: #9ac8eb;
+    background: #ffff;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -185,9 +186,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #5784ba;
-    opacity: 0.3;
-    clip-path: circle(150px at 80% 20%);
+    background: #f7f6cf;
+    opacity: 0.6;
+    /* clip-path: circle(150px at 60% 40%); */
+    clip-path: polygon(10px at 80% 20%);
     transition: 0.5s ease-in-out;
 }
 
@@ -225,7 +227,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-25deg);
+    transform: translate(-50%, -50%) rotate(-50deg);
     width: 270px;
 }
 
@@ -233,21 +235,21 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 120px;
     text-align: center;
     transition: 1s;
     z-index: 10;
 }
 
 .container .card:hover .contentBx {
-    height: 180px;
+    height: 190px;
 }
 
 .container .card .contentBx h2 {
     position: relative;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #fff;
+    color: #2A3A4C;
     margin: 0;
 }
 
@@ -280,8 +282,8 @@ body {
 .container .card .contentBx .color h3 {
     color: #5784ba;
     font-weight: 700;
-    font-size: 40px;
-    text-transform: uppercase;
+    font-size: 30px;
+    justify-content: center;
     letter-spacing: 2px;
     margin-right: 10px;
 }
