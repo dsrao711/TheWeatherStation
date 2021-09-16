@@ -3,5 +3,5 @@ Tech stack
 
 - Node.js
 - Express.js
-- EJS
+- Handlebars
 - Mongo DB
