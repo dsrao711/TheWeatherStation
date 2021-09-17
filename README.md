@@ -1,4 +1,4 @@
-# TheWeatherBooth
+# TheWeatherStation
 Tech stack
 
 - Node.js
